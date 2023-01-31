@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isHappy(int n) {
+        // happy number true if sum of digits square eventually equals 1
         unordered_map<int, int> m;
         while (n != 1) {
             if (m[n] == 0) {
