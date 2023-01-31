@@ -1,8 +1,9 @@
 class Solution {
 private:
     void tr(TreeNode* root, vector<int>& ans) {
+        // Input: root = [1,null,2,3], 
         if (root == nullptr) { return; }
-        ans.push_back(root->val); // preorder, Input: root = [1,null,2,3], Output: [1,2,3]
+        ans.push_back(root->val); // preorder, Output: [1,2,3]
         tr(root->left, ans);
         // ans.push_back(root->val); // inorder, Output: [1,3,2]
         tr(root->right, ans);
