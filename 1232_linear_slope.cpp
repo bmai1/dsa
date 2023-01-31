@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool checkStraightLine(vector<vector<int>>& c) {
+        // float because slope
         float delta_x = c[1][0] - c[0][0];
         float delta_y = c[1][1] - c[0][1];
 
