@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
+        
         // invalid size
         if (r * c != mat.size() * mat[0].size()) { return mat; }
         vector<vector<int>> ans;
