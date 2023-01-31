@@ -20,9 +20,6 @@ public:
         }
 
         map<char, int> box;
-        // board[0][0] * board[0][3] * board[0][6]
-        // board[3][0] * board[3][3] * board[3][6]
-        // board[6][0] * board[6][3] * board[6][6]
         for (int i = 0; i < 9; i += 3) {
             for (int j = 0; j < 9; j += 3) {
                 for (int k = 0; k < 3; ++k) {
