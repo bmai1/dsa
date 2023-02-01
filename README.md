@@ -1,2 +1,2 @@
 # u cannot be serious
-death! 2EM12_KK_A09.
+death! 2EM12_KK_A09
