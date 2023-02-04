@@ -21,6 +21,19 @@ public:
                 i = -1;
             }
         }
+        
+        /* Alternate two vector approach, same time complexity in large test cases. 
+        vector<pair<int, int>> hold;
+        for (int i = 0; i < score.size(); ++i) {
+            hold.push_back({score[i][k], i});
+        }
+        
+        sort(hold.rbegin(), hold.rend());
+        
+        for (auto& it : hold) {
+            ans.push_back(score[it.second]);
+        } */
+        
         return ans;
     }
 };
