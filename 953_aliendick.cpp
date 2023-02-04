@@ -16,8 +16,9 @@ public:
             if (words[i] == words[i + 1]) { continue; }
             for (int j = 0; j < n; ++j) {
                 if (words[i][j] == words[i + 1][j]) { continue; }
-                // pass case
+                // pass case, order of curr word char is lower than next word char
                 if (dict[words[i][j]] < dict[words[i + 1][j]]) { ++check; break; }
+                // return case
                 if (dict[words[i][j]] > dict[words[i + 1][j]]) { return false; }
             }
             // common prefix
