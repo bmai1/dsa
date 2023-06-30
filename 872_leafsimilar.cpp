@@ -1,4 +1,5 @@
 class Solution {
+private:
     void dfs(TreeNode* root, vector<int>& leaves) {
         if (!root) { return; }
         if (!root->left && !root->right) { leaves.push_back(root->val); }
