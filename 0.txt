@@ -21,5 +21,12 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-waowa
-4 APUSh
+// AP Lit - 
+// APUSH - 5
+// AP U.S. GovPol -
+// AP Calc AB - 5
+// AP Calc BC -
+// AP Stats - 
+// AP CSA - 
+// AP Physics 1 - 4
+
