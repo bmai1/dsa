@@ -11,4 +11,9 @@ public:
         }
         return stoi(s, nullptr, 2);
     }
+
+    unsigned mask = ~0; // ~ (bitwise NOT) represents complement of 0 (sequence of 1s in binary)
+    // first we need to move to the first occurence of 1 bit otherwise it flips leading 0s in 32 bit integer
+    while (num & mask) mask <<= 1; // & bitwise AND to <<= (left shift equals) by 1
+    return ~mask & ~num; // mask shows where first 1 starts and complement of num with ~
 };
