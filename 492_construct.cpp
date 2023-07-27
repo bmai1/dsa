@@ -14,4 +14,8 @@ public:
         }
         return d;
     }
+
+    int a = sqrt(area);
+    while (area % a) --a;
+    return { area / a, a };
 };
