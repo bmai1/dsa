@@ -10,4 +10,8 @@ public:
         }
         return isupper(word[0]);
     }
+
+    int cnt = 0;
+    for (char c : word) if (isupper(c)) ++cnt;
+    return cnt == 0 || (cnt == 1 && isupper(word[0])) || cnt == word.size();
 };
