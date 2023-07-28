@@ -4,16 +4,20 @@ public:
         vector<string> ans;
         int mn = INT_MAX;
 
-        // for (int i = 0; i < list1.size(); ++i) {
-        //     for (int j = 0; j < list2.size(); ++j) {
-        //         if (list1[i] == list2[j]) m = min(m, i + j);
-        //     }
-        // }
-        // for (int i = 0; i < list1.size(); ++i) {
-        //     for (int j = 0; j < list2.size(); ++j) {
-        //         if (list1[i] == list2[j] && i + j == m) ans.push_back(list1[i]);
-        //     }
-        // }
+        for (int i = 0; i < list1.size(); ++i) {
+            for (int j = 0; j < list2.size(); ++j) {
+                if (list1[i] == list2[j]) {
+                    if (i + j < mn) {
+                        mn = i + j;
+                        ans.clear();
+                        ans.push_back(list1[i]);
+                    }
+                    else if (i + j == mn) {
+                        ans.push_back(list1[i]);
+                    }
+                }
+            }
+        }
 
         unordered_map<string, int> m;
         for (int i = 0; i < list1.size(); ++i) m[list1[i]] = i;
