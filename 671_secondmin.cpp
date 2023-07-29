@@ -10,7 +10,6 @@ private:
 public:
     int findSecondMinimumValue(TreeNode* root) {
         t(root);
-        sort(nodes.begin(), nodes.end());
         set<int> s(nodes.begin(), nodes.end());
         if (s.size() <= 1) return -1;
         return *next(s.begin());
