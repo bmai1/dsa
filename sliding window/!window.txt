@@ -1,0 +1,1 @@
+A fixed, constant-size subarray that goes from left to right through the array
