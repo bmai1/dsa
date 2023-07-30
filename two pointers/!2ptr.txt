@@ -1,0 +1,19 @@
+Really bad habit of TLE'ing with two pointers on a sliding window problem
+Similar to:
+
+for (int i = 0; i < n; ++i) {
+    for (int j = i; j < n; ++j) {
+        // do stuff, usually with another loop
+    }
+}
+
+!! THIS IS NOT THE TWO POINTERS APPROACH, THAT IS BRUTE FORCE!!
+
+- Two pointers iterate through array (pt to first and last index of subarray), each moving one direction
+
+- Subarray Sum: 
+On each turn, the left pointer moves one step to the right, 
+right pointer moves to the right as long as the resulting subarray sum is at most x
+If the sum becomes exactly x, a solution has been found.
+
+
