@@ -1,19 +1,28 @@
 Really bad habit of TLE'ing with two pointers on a sliding window problem
-Similar to:
 
-for (int i = 0; i < n; ++i) {
-    for (int j = i; j < n; ++j) {
-        // do stuff, usually with another loop
+vvvvvvvvv
+
+for (int start = 0; start < nums.length; start++) {
+    for (int end = start + 1; end <= nums.length; end++) {
+        for (int i = start; i < end; i++)
+            // do something with arr[start..end]
     }
 }
 
-!! THIS IS NOT THE TWO POINTERS APPROACH, THAT IS BRUTE FORCE!!
+^^^^^^^^^
 
+!! THIS IS NOT THE TWO POINTERS APPROACH, that's brute force checking all subarrays !!
+
+Applicability of 2ptr depends on relation of window scopes:
+ 1. If a wider scope is invalid, narrower scope must also be invalid
+ 2. If a wider scope of the sliding window is valid, the narrower scope of that wider scope must remain (potentially) valid
+ - vice versa, contrapositive
+ 
 - Two pointers iterate through array (pt to first and last index of subarray), each moving one direction
 
 - Subarray Sum: 
-On each turn, the left pointer moves one step to the right, 
-right pointer moves to the right as long as the resulting subarray sum is at most x
-If the sum becomes exactly x, a solution has been found.
+  On each turn, the left pointer moves one step to the right, 
+  right pointer moves to the right as long as the resulting subarray sum is at most x
+  If the sum becomes exactly x, a solution has been found.
 
 
