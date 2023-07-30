@@ -1,6 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
+        // keep one ptr on the outside (i), two pointers lo = i + 1 and hi = end 
         vector<vector<int>> ans; 
         sort(nums.begin(), nums.end());
         if (nums.size() < 3 || nums[0] > 0) return {};
