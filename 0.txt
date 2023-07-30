@@ -20,13 +20,3 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
-
-// AP Lit - 
-// APUSH - 5
-// AP U.S. GovPol -
-// AP Calc AB - 5
-// AP Calc BC -
-// AP Stats - 
-// AP CSA - 
-// AP Physics 1 - 4
-
