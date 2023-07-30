@@ -8,15 +8,13 @@ public:
         for (int i = 0; i < nums.size(); ++i) {
             if (nums[i] > 0) break;
             // skip repeats
-            if (i > 0 && nums[i] == nums[i-1]) continue;
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
             int sum = 0;
             int low = i + 1, high = nums.size() - 1;
             while (low < high) {
                 sum = nums[i] + nums[low] + nums[high];
                 // sum too large = lower the high value
-                if (sum > 0) {
-                    --high;
-                }
+                if (sum > 0) --high;
                 else if (sum < 0) ++low;
                 // when sum == 0
                 else {
