@@ -1,0 +1,11 @@
+DP (65)
+Uses: optimal solution (x∗), count number of solutions
+- recursive formulation such that subproblem solutions lead to final solution
+- memoize after calculation -> reconstruct x∗, count n solutions
+
+- states: variables to memoize
+- transitions: how to use prior values to get curr value
+
+- Coin Problem
+- Longest Increasing Subsequence
+
