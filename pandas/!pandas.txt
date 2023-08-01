@@ -1,0 +1,21 @@
+- most important part is the DataFrame
+    - holds data like a table (think excel, sql)
+
+
+Filtering Data
+--------------
+-boolean indexing allows us to filter the DataFrame by using boolean arrays or conditions
+- &, | operators
+ex:
+    products: pd.DataFrame
+    df = products[(products['recyclable'] == 'Y') & ..]
+
+- ~ (bitwise not -> inversing boolean mask), represents logical negation
+- isin()
+ex: 
+    # ~isin(values) selects rows if their values are NOT present in values
+    # select rows in which `id` not present in orders['customerId']
+    df = customers[~customers['id'].isin(orders['customerId'])]
+    
+
+
