@@ -1,6 +1,7 @@
-- most important part is the DataFrame
-    - holds data like a table (think excel, sql)
-
+- Most important part is the DataFrame
+    - holds data like a table in database (think excel, SQL)
+    - can construct with dict as such:
+    df = pd.DataFrame({ 'colName': value })
 
 Filtering Data
 --------------
@@ -16,6 +17,19 @@ ex:
     # ~isin(values) selects rows if their values are NOT present in values
     # select rows in which `id` not present in orders['customerId']
     df = customers[~customers['id'].isin(orders['customerId'])]
-    
 
 
+String Methods
+--------------
+- formatted like df.col.str.method()
+ 
+- .str.contains(regex)
+- .str.len()
+
+
+Data Manipulation & Access
+--------------------------
+- col.rename(columns={'name': 'new_name'}, inplace=bool)
+- sort_values(by=col)
+- drop_duplicates(subset=col, keep='', inplace=bool)
+- iloc[row (zero-indexed)]
