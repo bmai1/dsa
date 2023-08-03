@@ -2,6 +2,8 @@
     - holds data like a table in database (think excel, SQL)
     - can construct with dict as such:
     df = pd.DataFrame({ 'colName': value })
+    
+- Extracting columns via df['col'] returns a Pandas Series
 
 Filtering Data
 --------------
@@ -29,7 +31,11 @@ String Methods
 
 Data Manipulation & Access
 --------------------------
-- col.rename(columns={'name': 'new_name'}, inplace=bool)
-- sort_values(by=col)
-- drop_duplicates(subset=col, keep='', inplace=bool)
-- iloc[row (zero-indexed)]
+- col.rename(columns={'name': 'new_name'}, inplace=bool) -> df.columns = ['col1','col2']
+- .sort_values(by=col)
+- .drop_duplicates(subset=col, keep='', inplace=bool)
+- .iloc[row (zero-indexed)]
+- .merge(df, df1, left_on='PID', right_on='FID', how='inner') -> merging values from two DataFrames (very important)
+- .groupby() (very important)
+- .transform()
+- .map() -> to dict
