@@ -1,5 +1,18 @@
-lo = 0, hi = end
-while (lo < hi) {
-    mid = lo + (hi - lo) / 2
-    adjust lo hi accordingly
-}
+generalized binary search template
+
+def binary_search(array) -> int:
+    def condition(value) -> bool:
+        pass
+
+    left, right = 0, len(array)
+    while left < right:
+        mid = left + (right - left) // 2
+        if condition(mid):
+            right = mid
+        else:
+            left = mid + 1
+    return left
+
+- setup left right boundary to include all elements
+- decide return value (left is minimal k satisfying condition)
+- design conditional to adjust left right
