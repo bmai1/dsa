@@ -1,0 +1,1 @@
+pretty similar to brute force, with recursion to not check all paths
