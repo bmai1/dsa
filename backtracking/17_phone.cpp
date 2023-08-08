@@ -1,4 +1,5 @@
 class Solution {
+private:
     vector<string> m = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
     vector<string> ans;
     void backtrack(string ndigits, string combination) {
