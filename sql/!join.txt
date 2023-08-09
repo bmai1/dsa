@@ -1,0 +1,3 @@
+INNER JOIN - match in both tables
+LEFT JOIN - join regardless of match in right (e.g. fill with NULL if n/a)
+RIGHT JOIN - returns rows from right, unmatched rows from the left
