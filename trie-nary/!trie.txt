@@ -1,0 +1,4 @@
+Trie (try) or prefix tree is a tree data structure 
+used to efficiently retrieve keys in dataset of strings
+
+- can be applied to autocomplete and spellcheckers
