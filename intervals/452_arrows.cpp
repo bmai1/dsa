@@ -30,5 +30,13 @@ public:
             ++cnt;
         }
         return isin(end, points[n - 1]) ? cnt : cnt + 1;
+
+        int cnt = 1, end = points[0][1];
+        for (int i = 1; i < n; ++i) {
+            if (end >= points[i][0]) continue;
+            ++cnt;
+            end = points[i][1];
+        }
+        return cnt;
     }
 };
