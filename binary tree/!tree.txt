@@ -9,3 +9,18 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+ binary tree problems generally have some kind of recursive traversal algorithm
+
+ - preorder, inorder, postorder
+ (preorder) traversal template:
+
+ void t(TreeNode* root) {
+    if (!root) return;
+    // do something 
+    t(root->left);
+    t(root->right);
+ }
+
+
+ 
