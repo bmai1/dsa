@@ -6,7 +6,7 @@ public:
             m = INT_MAX;
             for (auto n : nums) if (n > 0 && n < m) m = n;
             for (auto &n : nums) if (n > 0) n -= m;
-            if (m == INT_MAX) break;
+            
             ++op;
         }
         return op;
