@@ -1,0 +1,5 @@
+- n x n matrix, knight starts at mat[0][0], find path to touch all squares
+- can start at any square (doesn't matter when filling all)
+- return array in format of row * n + col indexed
+- (n) board size is input, n >= 5 always can visit all paths
+- offset array, check boundaries and backtrack recursively
