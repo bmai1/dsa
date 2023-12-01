@@ -18,16 +18,19 @@ private:
         {2, 1},
     };
 
-    bool isValidMove(int nextRow, int nextCol, int n, vector<vector<bool>>& visited) {
+    bool isValid(int nextRow, int nextCol, int n, vector<vector<bool>>& visited) {
         return (nextRow >= 0 && nextRow < n && nextCol >= 0 && nextCol < n && !visited[nextRow][nextCol]);
     }
 
+    // Warnsdorff's rule: implement a heuristic to always move knight to an unvisited square with minimum possible moves
+
+    // find valid moves for given position
     int countValidMoves(int row, int col, int n, vector<vector<bool>>& visited) {
         int count = 0;
         for (auto jump : jumpOffset) {
             int nextRow = row + jump.first;
             int nextCol = col + jump.second;
-            if (isValidMove(nextRow, nextCol, n, visited)) {
+            if (isValid(nextRow, nextCol, n, visited)) {
                 ++count;
             }
         }
@@ -46,12 +49,13 @@ private:
         for (auto jump : jumpOffset) {
             int nextRow = row + jump.first;
             int nextCol = col + jump.second;
-            if (isValidMove(nextRow, nextCol, n, visited)) {
+            if (isValid(nextRow, nextCol, n, visited)) {
                 int moveCount = countValidMoves(nextRow, nextCol, n, visited);
                 moves.push_back({moveCount, {nextRow, nextCol}});
             }
         }
 
+        // sort moves based on the number of valid moves from each position
         sort(moves.begin(), moves.end());
 
         for (auto move : moves) {
@@ -62,8 +66,9 @@ private:
             if (backtrack(currPath, visited, nextRow, nextCol, n)) return true;
             currPath.pop_back();
         }
-
-        visited[row][col] = false; // Backtrack
+        
+        // backtrack
+        visited[row][col] = false; 
         return false;
     }
 
