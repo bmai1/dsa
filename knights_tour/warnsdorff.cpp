@@ -45,7 +45,9 @@ private:
 
         visited[row][col] = true;
 
+        // store moves and 2d matrix indices
         vector<pair<int, pair<int, int>>> moves;
+        
         for (auto jump : jumpOffset) {
             int nextRow = row + jump.first;
             int nextCol = col + jump.second;
@@ -84,7 +86,7 @@ public:
 
 int main() {
     Solution solve;
-    vector<int> res = solve.knightsTour(10);
+    vector<int> res = solve.knightsTour(5);
     for (int n : res) cout << n << " ";
     cout << endl << (res.empty() ? "No valid path exists." : "A valid path has been found.") << endl; 
     return 0;
