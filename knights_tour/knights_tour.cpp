@@ -14,8 +14,8 @@ private:
     vector<pair<int, int>> jumpOffset = {
         {-2, -1}, // 2 up, 1 left
         {-2, 1},  // 2 up, 1 right
-        {-1, -1}, // 1 up, 1 left
-        {-1, 1},  // 1 up, 1 right
+        {-1, 2}, // 1 up, 2 left
+        {-1, 2},  // 1 up, 2 right
         {1, -2},  // 1 down, 2 left
         {1, 2},   // 1 down, 2 right
         {2, -1},  // 2 down, 1 left
@@ -23,8 +23,9 @@ private:
     };
 
     // check if a move is within board boundaries and not yet visited
-    bool isValid(int nextRow, int nextCol, int n, vector<vector<bool>>& visited) {
+    bool isValid(int nextRow, int nextCol, int n, vector<vector<bool>>& visited, vector<int>& currPath) {
         return (nextRow >= 0 && nextRow < n && nextCol >= 0 && nextCol < n && !visited[nextRow][nextCol]);
+      
     }
 
     // recursively try moves to find valid knight path
@@ -38,12 +39,10 @@ private:
             // find next possible positions (maximum of 8) by looping through offset array
             nextRow = row + jump.first;
             nextCol = col + jump.second;
-
-            if (isValid(nextRow, nextCol, n, visited)) {
+            if (isValid(nextRow, nextCol, n, visited, currPath)) {
                 currPath.push_back(nextRow * n + nextCol); // 
                 backtrack(currPath, visited, nextRow, nextCol, n); // recursively test new path with current move
-
-                // restore previous currPath and visited array to continue backtracking
+                // backtrack
                 visited[nextRow][nextCol] = false;
                 currPath.pop_back();
             }
@@ -62,7 +61,7 @@ public:
 
 int main() {
     Solution solve;
-    vector<int> res = solve.knightsTour(5);
+    vector<int> res = solve.knightsTour(8);
     for (int n : res) cout << n << " ";
     cout << endl << (res.empty() ? "No valid path exists." : "A valid path has been found.") << endl; 
     return 0;
