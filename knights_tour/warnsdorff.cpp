@@ -24,7 +24,7 @@ private:
 
     // Warnsdorff's rule: implement a heuristic to always move knight to an unvisited square with minimum possible moves
 
-    // find valid moves for given position
+    // count valid moves for given position
     int countValidMoves(int row, int col, int n, vector<vector<bool>>& visited) {
         int count = 0;
         for (auto jump : jumpOffset) {
