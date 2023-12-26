@@ -1,16 +1,16 @@
 class Solution {
 private:
-    int mod = 1e9 + 7;
     vector<vector<int>> dp;
+    int mod = 1e9 + 7;
     int r(int n, int k, int target, int total) {
-        if (n > target || n < 0 || total > target) return 0;
-        if (n == 0 && total == target) return 1;
+        if (n == 0) return total == target;
+        if (total > target) return 0;
         if (dp[n][total] != -1) return dp[n][total];
-        int curr = 0;
+        int res = 0;
         for (int i = 1; i <= k; ++i) {
-            curr = curr % mod + r(n - 1, k, target, total + i) % mod;
+            res = (res + r(n - 1, k, target, total + i)) % mod;
         }
-        return dp[n][total] = curr % mod;
+        return dp[n][total] = res;
     }
 public:
     int numRollsToTarget(int n, int k, int target) {
