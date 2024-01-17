@@ -1,1 +1,1 @@
-This is a collection of LeetCode problem solution, organized by most relevant topic.
+This is a collection of LeetCode problem solutions, organized by most relevant topic.
