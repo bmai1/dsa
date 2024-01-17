@@ -18,8 +18,9 @@ public:
     string findDifferentBinaryString(vector<string>& nums) {
         // cantor's diagonal argument
         // string res;
-        // for (int i = 0; i < nums.size(); ++i) 
+        // for (int i = 0; i < nums.size(); ++i) {
         //     res += nums[i][i] == '0' ? '1' : '0';
+        // }
         // return res;
 
         for (auto s : nums) bs.insert(s);
