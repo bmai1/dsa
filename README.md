@@ -1,1 +1,1 @@
-# wee i hope i hope i can escape asylum
+This is a collection of LeetCode problem solution, organized by most relevant topic.
