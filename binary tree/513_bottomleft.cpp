@@ -14,17 +14,10 @@ class Solution {
     int res;
     void dfs(TreeNode* root, int c) {
         if (!root) return;
-        
-        if (c >= d) {
-            if (root->left) {
-                res = root->left->val;
-            }
-            else if (root->right) {
-                res = root->right->val;
-            }
+        if (c > d) {
             d = c;
+            res = root->val;
         }
-        
         dfs(root->left, c + 1);
         dfs(root->right, c + 1);
     }
