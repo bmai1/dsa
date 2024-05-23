@@ -18,26 +18,28 @@ public:
         // }
         // return mx;
         
-        int n = energy.size();
-        int mx = INT_MIN;
-        dp.resize(n, INT_MAX);
-        
-        for (int i = n - 1; i >= n - k; --i) {
-            mx = max(mx, re(energy, i, k));
-        }
-        
-        return mx;
-        
-        // int mx = INT_MIN;
         // int n = energy.size();
-        // vector<int> dp(n);
-        // for (int i = 0; i < k; ++i) {
-        //     dp[i] = energy[i];
+        // int mx = INT_MIN;
+        // dp.resize(n, INT_MAX);
+        
+        // for (int i = n - 1; i >= n - k; --i) {
+        //     mx = max(mx, re(energy, i, k));
         // }
-        // for (int i = k; i < n; ++i) {
-        //     dp[i] = max(energy[i] + dp[i - k], energy[i]);
-        //     mx = max(mx, dp[i]);
-        // }
+        
         // return mx;
+        
+        int n = energy.size();
+        vector<int> dp(n);
+        for (int i = 0; i < k; ++i) {
+            dp[i] = energy[i];
+        }
+        for (int i = k; i < n; ++i) {
+            dp[i] = max(energy[i] + dp[i - k], energy[i]);
+        }
+        int mx = INT_MIN;
+        for (int i = n - k; i < n; ++i) {
+            mx = max(mx, dp[i]);
+        }
+        return mx;
     }
 };
