@@ -12,10 +12,19 @@ public:
         while (s != "1") {
             ++cnt;
             if (s.back() == '1') {
-                int back = s.size() - 1;
-                while (back >= 0 && s[back] == '1') s[back--] = '0';
-                if (back == -1) s = "1" + s;
-                else s[back] = '1';
+
+                // int back = s.size() - 1;
+                // while (back >= 0 && s[back] == '1') s[back--] = '0';
+                // if (back == -1) s = "1" + s;
+                // else s[back] = '1';
+
+                while (!s.empty() && s.back() == '1') {
+                    s.pop_back();
+                    ++cnt;
+                }
+                if (s.empty()) return cnt;
+                else s.back() = '1';
+                
             }
             else s.pop_back();
         }
