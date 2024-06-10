@@ -1,6 +1,6 @@
 class Solution {
 private:
-    int dp[2001][4000];
+    int dp[2000][4000];
     int re(vector<int>& r, int curr) {
         int res = curr;
         for (int i = 0; i < r.size(); ++i) {
@@ -12,7 +12,7 @@ private:
                 dp[i][curr] = res;
                 r[i] = tmp;
             }
-            else break; // works due to sort
+            else break; // works due to reverse sort
         }
         return res;
     }
