@@ -11,10 +11,14 @@ public:
                 val = mapping[tmp % 10] * m + val;
                 m *= 10, tmp /= 10;
             }
+            // using index as second value rather than nums[i] stablizes the sort!
             mapped.push_back({val, i});
         }
+
         // leaves equal values in same position
-        stable_sort(mapped.begin(), mapped.end());
+        // stable_sort(mapped.begin(), mapped.end());
+
+        sort(mapped.begin(), mapped.end());
 
         vector<int> res;
         for (auto& p : mapped) {
